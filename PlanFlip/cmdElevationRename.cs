@@ -30,9 +30,9 @@ namespace PlanFlip
             colViews.OfCategory(BuiltInCategory.OST_Views);
 
             // set a variable for the view name
-            Element curViewName = colViews.FirstElement();
+            // Element curViewName = colViews.FirstElement();
 
-            string viewName = curViewName.Name;
+            // string viewName = curViewName.Name;
 
             // find the Title on Sheet Parameter & assign it to a variable
             Element curTitleOnSheet = colViews.FirstElement();
@@ -54,10 +54,10 @@ namespace PlanFlip
             foreach (View curView in colViews)
             {
                 // change view name
-                if (curViewName.Contains ("Left"))
-                    curViewName.Replace ("Left", "Right");
-                else if (curViewName.Contains ("Right"))       
-                    curViewName.Replace ("Right", "Left");
+                if (curView.Name.Contains ("Left"))
+                    curView.Name.Replace ("Left", "Right");
+                else if (curView.Name.Contains ("Right"))       
+                    curView.Name.Replace ("Right", "Left");
 
                 // change the title on sheet
                 if (curTitle.Contains("Left"))
