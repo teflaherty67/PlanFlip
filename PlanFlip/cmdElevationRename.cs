@@ -25,7 +25,7 @@ namespace PlanFlip
             Application app = uiapp.Application;
             Document doc = uidoc.Document;
 
-            get all the views
+            // get all the views
             FilteredElementCollector colViews = new FilteredElementCollector(doc);
             colViews.OfCategory(BuiltInCategory.OST_Views);
 
@@ -54,16 +54,16 @@ namespace PlanFlip
             foreach (View curView in colViews)
             {
                 // change view name
-                if (curViewName.Contains "Left")
-                    curViewName.Replace "Left", "Right";
-                else if (curViewName.Contains "Right")       
-                    curViewName.Replace "Right", "Left";
+                if (curViewName.Contains ("Left"))
+                    curViewName.Replace ("Left", "Right");
+                else if (curViewName.Contains ("Right"))       
+                    curViewName.Replace ("Right", "Left");
 
                 // change the title on sheet
-                if (curTitle.Contains "Left")
-                    curTitle.Replace "Left", "Right";
-                else if (curTitle.Contains "Right")
-                 curTitle.Replace "Right", "Left"
+                if (curTitle.Contains("Left"))
+                    curTitle.Replace("Left", "Right");
+                else if (curTitle.Contains("Right"))
+                    curTitle.Replace("Right", "Left");
             }                     
 
             // commit the changes
