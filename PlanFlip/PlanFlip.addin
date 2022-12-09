@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<RevitAddIns>
+  <AddIn Type="Command">
+    <Text>Rename Elevations</Text>
+    <Description>Renames Left and Right Elevations</Description>
+    <Assembly>PlanFlip.dll</Assembly>
+    <FullClassName>PlanFlip.cmdElevationRename</FullClassName>
+    <ClientId>df691dc3-4581-4836-bed3-4335ed388048</ClientId>
+    <VendorId>T Edward</VendorId>
+    <VendorDescription>T Edward Coder</VendorDescription>
+  </AddIn>
+  <AddIn Type="Application">
+    <Name>Application PlanFlip</Name>
+    <Assembly>PlanFlip.dll</Assembly>
+    <FullClassName>PlanFlip.App</FullClassName>
+    <ClientId>75a04fb4-d832-44a8-92a8-ec7a2f489367</ClientId>
+    <VendorId>T Edward</VendorId>
+    <VendorDescription>T Edward Coder</VendorDescription>
+  </AddIn>
+</RevitAddIns>
