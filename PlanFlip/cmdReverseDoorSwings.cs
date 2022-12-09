@@ -25,7 +25,39 @@ namespace PlanFlip
             Application app = uiapp.Application;
             Document doc = uidoc.Document;
 
+            // get all the doors in the project
+            // collect all the doors in the project
+
+            FilteredElementCollector colDoors = new FilteredElementCollector(doc);
+            colDoors.OfCategory(BuiltInCategory.OST_Doors);
+            colDoors.WhereElementIsNotElementType();
            
+            // issue warning if no doors are present
+            if (colDoors.GetElementCount() == 0)
+            {
+                // alert the user
+                TaskDialog.Show("Error", "There are no doors in the project.");
+            }
+
+            // create varaible for the swing parameter??
+
+            // start the transaction
+            Transaction t = new Transaction(doc);
+            t.Start("Reverse Door Swings");
+
+            // loop through each door
+
+            // check to see if the swing parameter exists
+
+            // change left to right
+
+            // change right to left
+
+            // commit the changes
+            t.Commit();
+
+            // dispose the transaction
+            t.Dispose();
 
             return Result.Succeeded;
         }

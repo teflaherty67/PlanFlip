@@ -25,7 +25,7 @@ namespace PlanFlip
             Application app = uiapp.Application;
             Document doc = uidoc.Document;
 
-            // get all the views
+            /* get all the views
             FilteredElementCollector colViews = new FilteredElementCollector(doc);
             colViews.OfCategory(BuiltInCategory.OST_Views);
 
@@ -52,7 +52,7 @@ namespace PlanFlip
 
             // I think I need a loop here
             foreach (View curView in colViews)
-            {
+            /*{
                 // change view name
                 if (curViewName.Contains "Left")
                     curViewName.Replace "Left", "Right";
@@ -68,7 +68,7 @@ namespace PlanFlip
 
             // commit the changes
             t.Commit();
-            t.Dispose();
+            t.Dispose();*/
 
             return Result.Succeeded;
         }
