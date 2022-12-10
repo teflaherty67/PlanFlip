@@ -50,7 +50,7 @@ namespace PlanFlip
             Transaction t = new Transaction(doc);
             t.Start("Rename Elevations");
 
-            // I think I need a loop here
+            // loop through the view collector
             foreach (View curView in colViews)
             {
                 // change view name
