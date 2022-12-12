@@ -25,16 +25,13 @@ namespace PlanFlip
             Application app = uiapp.Application;
             Document doc = uidoc.Document;
 
-            // get all the views
+            // get all the elevation views
+            ViewType desiredViewType = ViewType.Elevation;
             FilteredElementCollector colViews = new FilteredElementCollector(doc);
-            colViews.OfCategory(BuiltInCategory.OST_Views);
+            colViews.OfClass(typeof(View));
+            Where((v) => v.ViewType == desiredViewType);
 
-            // set a variable for the view name
-            // Element curViewName = colViews.FirstElement();
-
-            // string viewName = curViewName.Name;
-
-            // find the Title on Sheet Parameter & assign it to a variable
+           
             Element curTitleOnSheet = colViews.FirstElement();
 
             string curTitle = "";
