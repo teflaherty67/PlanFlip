@@ -26,13 +26,10 @@ namespace PlanFlip
             Document doc = uidoc.Document;
 
             // get all the elevation views
-            ViewType desiredViewType = ViewType.Elevation;
-            FilteredElementCollector colViews = new FilteredElementCollector(doc);
-            colViews.OfClass(typeof(View));
-            Where((v) => v.ViewType == desiredViewType);
+            View viewList = GetAllElevationViews(doc);
 
            
-            Element curTitleOnSheet = colViews.FirstElement();
+            Element curTitleOnSheet = viewList.FirstElement();
 
             string curTitle = "";
             foreach (Parameter curParam in curTitleOnSheet.Parameters)
@@ -48,7 +45,7 @@ namespace PlanFlip
             t.Start("Rename Elevations");
 
             // loop through the view collector
-            foreach (View curView in colViews)
+            foreach (View curView in viewList)
             {
                 // change view name
                 if (curView.Name.Contains ("Left"))
