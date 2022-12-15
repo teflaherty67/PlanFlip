@@ -27,7 +27,7 @@ namespace PlanFlip
 
             // get all the elevation views
 
-            List<View> viewList = GetAllElevationViews(doc);
+            List<View> viewList = Utils.GetAllElevationViews(doc);
            
             Element curTitleOnSheet = viewList.FirstElement();
 
@@ -65,32 +65,6 @@ namespace PlanFlip
             t.Dispose();
 
             return Result.Succeeded;
-        }
-
-        public static List<View> GetAllElevationViews(Document doc)
-        {
-            List<View> returnList = new List<View>();
-
-            FilteredElementCollector colViews = new FilteredElementCollector(doc);
-            colViews.OfClass(typeof(View));
-
-            // loop through views and check for elevation views
-            foreach (View x in colViews)
-            {
-                if (x.GetType() == typeof(ViewSection))
-                {
-                    if (x.IsTemplate == false)
-                    {
-                        if (x.ViewType == ViewType.Elevation)
-                        {
-                            // add view to list
-                            returnList.Add(x);
-                        }
-                    }
-                }
-            }
-
-            return returnList;
         }
     }
 }
