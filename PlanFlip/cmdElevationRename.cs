@@ -48,9 +48,9 @@ namespace PlanFlip
             foreach (View curView in viewList)
             {
                 // change view name
-                if (curView.Name.Contains ("Left"))
+                if (curView.Name.Contains("Left") == true)
                     curView.Name.Replace ("Left", "Right");
-                else if (curView.Name.Contains ("Right"))       
+                else if (curView.Name.Contains("Right") == true)       
                     curView.Name.Replace ("Right", "Left");
 
                 // change the title on sheet
