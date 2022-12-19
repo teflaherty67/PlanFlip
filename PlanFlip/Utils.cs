@@ -39,7 +39,7 @@ namespace PlanFlip
             return returnList;
         }
 
-        public static List<View> GetAllViewsByViewFamilyType(Document doc, string viewVFT)
+        public static List<View> GetAllElevationsByViewFamilyType(Document doc)
         {
             List<View> viewList = new List<View>();
             
@@ -49,7 +49,7 @@ namespace PlanFlip
             // loop through views and check for elevation views
             foreach (ViewFamilyType x in colViews)
             {
-                if (x.ViewFamily == ViewFamily.viewVFT)
+                if (x.ViewFamily == ViewFamily.Elevation)
                     viewList.Add(x);              
             }
 
