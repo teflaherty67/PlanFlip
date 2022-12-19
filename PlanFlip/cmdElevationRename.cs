@@ -29,7 +29,7 @@ namespace PlanFlip
 
             List<View> viewList = Utils.GetAllElevationViews(doc);
            
-            Element curTitleOnSheet = viewList.FirstElement();
+            Element curTitleOnSheet = viewList.FirstElement;
 
             string curTitle = "";
             foreach (Parameter curParam in curTitleOnSheet.Parameters)

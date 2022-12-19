@@ -38,5 +38,22 @@ namespace PlanFlip
 
             return returnList;
         }
+
+        public static List<View> GetAllViewsByViewFamilyType(Document doc, string viewVFT)
+        {
+            List<View> viewList = new List<View>();
+            
+            FilteredElementCollector colViews = new FilteredElementCollector(doc);
+            colViews.OfClass(typeof(ViewFamilyType));
+
+            // loop through views and check for elevation views
+            foreach (ViewFamilyType x in colViews)
+            {
+                if (x.ViewFamily == ViewFamily.viewVFT)
+                    viewList.Add(x);              
+            }
+
+            return viewList;
+        }
     }
 }
