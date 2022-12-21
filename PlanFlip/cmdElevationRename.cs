@@ -29,16 +29,8 @@ namespace PlanFlip
 
             List<View> viewList = Utils.GetAllElevationViews(doc);
            
-            Element curTitleOnSheet = viewList.FirstElement;
-
-            string curTitle = "";
-            foreach (Parameter curParam in curTitleOnSheet.Parameters)
-            {
-                if(curParam.Definition.Name == "Title on Sheet")
-                {
-                    curTitle = curParam.ToString();
-                }
-            }
+            // MK edit: this line isn't needed
+            //Element curTitleOnSheet = viewList.FirstElement;
 
             // start the transaction
             Transaction t = new Transaction(doc);
@@ -47,17 +39,37 @@ namespace PlanFlip
             // loop through the view collector
             foreach (View curView in viewList)
             {
+                // MK edit: added variable for parameter
+                Parameter titleParam = null;
+
+                // MK edit: moved this to inside the foreach loop
+                string curTitle = "";
+                foreach (Parameter curParam in curView.Parameters)
+                {
+                    if (curParam.Definition.Name == "Title on Sheet")
+                    {
+                        titleParam = curParam;
+
+                        // MK edit: changed this line to use the AsString() method
+                        curTitle = curParam.AsString();
+                    }
+                }
+
                 // change view name
                 if (curView.Name.Contains("Left") == true)
-                    curView.Name.Replace ("Left", "Right");
-                else if (curView.Name.Contains("Right") == true)       
-                    curView.Name.Replace ("Right", "Left");
+                    // MK edit: added curView.Name to front of line
+                    curView.Name = curView.Name.Replace ("Left", "Right");
+                else if (curView.Name.Contains("Right") == true)
+                    // MK edit: added curView.Name to front of line
+                    curView.Name = curView.Name.Replace ("Right", "Left");
 
                 // change the title on sheet
                 if (curTitle.Contains("Left"))
-                    curTitle.Replace("Left", "Right");
+                    // MK edit: added curView.Name to front of line
+                    titleParam.Set(curTitle.Replace("Left", "Right"));
                 else if (curTitle.Contains("Right"))
-                    curTitle.Replace("Right", "Left");
+                    // MK edit: added curView.Name to front of line
+                    titleParam.Set(curTitle.Replace("Right", "Left"));
             }                     
 
             // commit the changes
