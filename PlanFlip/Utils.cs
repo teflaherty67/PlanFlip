@@ -37,25 +37,6 @@ namespace PlanFlip
             }
 
             return returnList;
-        }
-
-        public static List<View> GetAllElevationsByViewType(Document doc)
-        {
-            List<View> viewList = new List<View>();
-            
-            FilteredElementCollector colViews = new FilteredElementCollector(doc);
-            // MK edit: changed this line to get all views, not viewfamilytypes
-            colViews.OfClass(typeof(View));
-
-            // loop through views and check for elevation views
-            foreach (View x in colViews)
-            {
-                // MK edit: changed this line to use the ViewType property. ViewFamily only works with ViewFamilyTypes
-                if (x.ViewType == ViewType.Elevation)
-                    viewList.Add(x);              
-            }
-
-            return viewList;
-        }
+        }       
     }
 }
