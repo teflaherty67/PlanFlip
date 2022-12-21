@@ -28,6 +28,8 @@ namespace PlanFlip
             // get all the elevation views
 
             List<View> viewList = Utils.GetAllElevationViews(doc);
+
+            List<View> viewList2 = new List<View>();
            
             // MK edit: this line isn't needed
             //Element curTitleOnSheet = viewList.FirstElement;
@@ -58,11 +60,13 @@ namespace PlanFlip
                 // change view name
                 if (curView.Name.Contains("Left") == true)
                     // MK edit: added curView.Name to front of line
-                    curView.Name = curView.Name.Replace ("Left", "Right");
+                    curView.Name = curView.Name.Replace ("Left", "$Right");
                 else if (curView.Name.Contains("Right") == true)
                     // MK edit: added curView.Name to front of line
-                    curView.Name = curView.Name.Replace ("Right", "Left");
+                    curView.Name = curView.Name.Replace ("Right", "$Left");
 
+                viewList2.Add(curView);
+               
                 // change the title on sheet
                 if (curTitle.Contains("Left"))
                     // MK edit: added curView.Name to front of line
@@ -70,7 +74,16 @@ namespace PlanFlip
                 else if (curTitle.Contains("Right"))
                     // MK edit: added curView.Name to front of line
                     titleParam.Set(curTitle.Replace("Right", "Left"));
-            }                     
+            }
+
+            foreach (View curView in viewList2)
+            {
+                // change view name
+                if (curView.Name.Contains("$Right") == true)
+                    curView.Name = curView.Name.Replace("$Right", "Right");
+                else if (curView.Name.Contains("$Left") == true)
+                    curView.Name = curView.Name.Replace("$Left", "Left");
+            }
 
             // commit the changes
             t.Commit();
