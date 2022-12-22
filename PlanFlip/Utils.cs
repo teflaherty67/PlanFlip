@@ -37,6 +37,28 @@ namespace PlanFlip
             }
 
             return returnList;
-        }       
+        }
+
+        internal static List<FamilyInstance> GetAllDoorsBySwing(Document doc, string doorSwing)
+        {
+            List<FamilyInstance> returnList = new List<FamilyInstance>();
+            
+            FilteredElementCollector colDoors = new FilteredElementCollector(doc);
+            colDoors.OfCategory(BuiltInCategory.OST_Doors);
+            colDoors.WhereElementIsNotElementType();
+
+            foreach(FamilyInstance curDoor in colDoors)
+            {
+                foreach (Parameter curParam in curDoor.Parameters)
+                {
+                    if (curParam.Definition.Name == doorSwing && curParam.AsDouble == 1)
+                    {
+                        returnList.Add(curDoor);
+                    }
+                }
+            }
+
+            return returnList;
+        }
     }
 }

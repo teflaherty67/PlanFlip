@@ -25,28 +25,20 @@ namespace PlanFlip
             Application app = uiapp.Application;
             Document doc = uidoc.Document;
 
-            // get all the doors in the project
-            // collect all the doors in the project
+            // get all the doors in the project & create lists by swing
 
-            FilteredElementCollector colDoors = new FilteredElementCollector(doc);
-            colDoors.OfCategory(BuiltInCategory.OST_Doors);
-            colDoors.WhereElementIsNotElementType();
-           
-            // issue warning if no doors are present
-            if (colDoors.GetElementCount() == 0)
-            {
-                // alert the user
-                TaskDialog.Show("Error", "There are no doors in the project.");
-            }
+            List<FamilyInstance> leftSwing = Utils.GetAllDoorsBySwing(doc, "Swing Left");
 
-            // create varaible for the swing parameter??
+            List<FamilyInstance> rightSwing = Utils.GetAllDoorsBySwing(doc, "Swing Right");
 
             // start the transaction
-            Transaction t = new Transaction(doc);
-            t.Start("Reverse Door Swings");
+            using (Transaction t = new Transaction(doc))
+            {
+                t.Start("Reverse Door Swings");
+            } 
 
-            // loop through each door
-
+            // loop through each door in each list
+           
             // check to see if the swing parameter exists
 
             // change left to right
@@ -54,10 +46,10 @@ namespace PlanFlip
             // change right to left
 
             // commit the changes
-            t.Commit();
 
-            // dispose the transaction
-            t.Dispose();
+            
+            
+           
 
             return Result.Succeeded;
         }
