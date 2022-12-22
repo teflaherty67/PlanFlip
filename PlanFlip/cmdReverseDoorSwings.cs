@@ -27,29 +27,71 @@ namespace PlanFlip
 
             // get all the doors in the project & create lists by swing
 
-            List<FamilyInstance> leftSwing = Utils.GetAllDoorsBySwing(doc, "Swing Left");
+            FilteredElementCollector colDoors = new FilteredElementCollector(doc);
+            colDoors.OfCategory(BuiltInCategory.OST_Doors);
+            colDoors.WhereElementIsNotElementType();
 
-            List<FamilyInstance> rightSwing = Utils.GetAllDoorsBySwing(doc, "Swing Right");
+            List<FamilyInstance> leftSwing = new List<FamilyInstance>();
+
+            List<FamilyInstance> rightSwing = new List<FamilyInstance>();
+
+            // Parameter leftParam == null;
+
+            // Parameter rightParam = null;
+
+            // loop through all the parameters in colDoors & find Swing Left and Swing Right
+
+            foreach (FamilyInstance curDoor in colDoors)
+            {
+                foreach (Parameter curParam in curDoor.Parameters)
+                {
+                    if (curParam.Definition.Name == "Swing Left")
+                    {
+                        // do something
+                            // set LeftParam equal to curParam??
+                            // check the value of the parameter
+                            // if it's equal to 0, ignore it
+                            // if it's equal to 1, add curDoor to the leftSwing list
+                    }
+
+                    else if (curParam.Definition.Name == "Swing Right")
+                    {
+                        Parameter rightParam = curParam;
+                        
+                        // do something else
+                            // set rightParam equal to curParam"
+                            // check the value of the parameter
+                            // if it's equal to 0, ignore it
+                            // if it's equal to 1, add curDoor to the rightSwing list
+                    }
+                }
+            }
 
             // start the transaction
             using (Transaction t = new Transaction(doc))
             {
                 t.Start("Reverse Door Swings");
-            } 
 
-            // loop through each door in each list
-           
-            // check to see if the swing parameter exists
+                foreach (FamilyInstance curDoor in leftSwing)
+                {
+                    // set Swing Left value to 0
+                        // leftParam.Set(0)
 
-            // change left to right
+                    // set Swing Right value to 1
+                        // rightParam.Set(1)
+                }
 
-            // change right to left
+                foreach (FamilyInstance curDoor in rightSwing)
+                {
+                    // set Swing Left value to 1
+                        // leftParam.Set(1)
 
-            // commit the changes
+                    // set Swing Right value to 0
+                        // rightParam.Set(0)
+                }
 
-            
-            
-           
+                t.Commit();
+            }
 
             return Result.Succeeded;
         }
