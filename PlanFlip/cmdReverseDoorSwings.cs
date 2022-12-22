@@ -55,9 +55,7 @@ namespace PlanFlip
                     }
 
                     else if (curParam.Definition.Name == "Swing Right")
-                    {
-                        Parameter rightParam = curParam;
-                        
+                    {                               
                         // do something else
                             // set rightParam equal to curParam"
                             // check the value of the parameter
