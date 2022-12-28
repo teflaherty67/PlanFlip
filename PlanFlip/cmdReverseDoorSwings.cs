@@ -51,11 +51,7 @@ namespace PlanFlip
                 {
                     rightSwing.Add(door);
                 }
-            }
-
-            
-
-            
+            }            
 
             // start the transaction
             using (Transaction t = new Transaction(doc))
@@ -64,20 +60,20 @@ namespace PlanFlip
 
                 foreach (FamilyInstance curDoor in leftSwing)
                 {
-                    // set Swing Left value to 0
-                        // leftParam.Set(0)
+                    // set Swing Left value to no
+                        // lSwing.Set("No")
 
-                    // set Swing Right value to 1
-                        // rightParam.Set(1)
+                    // set Swing Right value to yes
+                        // rSwing.Set("Yes")
                 }
 
                 foreach (FamilyInstance curDoor in rightSwing)
                 {
-                    // set Swing Left value to 1
-                        // leftParam.Set(1)
+                    // set Swing Right value to no
+                    // rSwing.Set("No")
 
-                    // set Swing Right value to 0
-                        // rightParam.Set(0)
+                    // set Swing Left value to yes
+                    // lSwing.Set("Yes")
                 }
 
                 t.Commit();
