@@ -7,6 +7,7 @@ using Autodesk.Revit.UI.Selection;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
+using System.Linq;
 
 #endregion
 
@@ -34,7 +35,25 @@ namespace PlanFlip
             List<FamilyInstance> leftSwing = new List<FamilyInstance>();
             List<FamilyInstance> rightSwing = new List<FamilyInstance>();
 
+            // code snippetts; not sure where these go
 
+            foreach(FamilyInstance door in colDoors)
+            {
+                string lSwing = Utils.GetParameterValueByName(door, "Swing Left");
+                string rSwing = Utils.GetParameterValueByName(door, "Swing Right");
+
+                if (lSwing == "Yes")
+                {
+                    leftSwing.Add(door);
+                }
+
+                else if (rSwing == "Yes")
+                {
+                    rightSwing.Add(door);
+                }
+            }
+
+            
 
             
 
