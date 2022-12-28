@@ -52,5 +52,17 @@ namespace PlanFlip
 
             return "";
         }
+
+        internal static void SetParameterByName(Element element, string paramName, string value)
+        {
+            IList<Parameter> paramList = element.GetParameters(paramName);
+
+            if (paramList != null)
+            {
+                Parameter param = paramList[0];
+
+                param.Set(value);
+            }
+        }
     }
 }
