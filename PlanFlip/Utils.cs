@@ -39,26 +39,18 @@ namespace PlanFlip
             return returnList;
         }
 
-        internal static List<FamilyInstance> GetAllDoorsBySwing(Document doc, string doorSwing)
+        internal static string GetParameterValueByName(Element element, string paramName)
         {
-            List<FamilyInstance> returnList = new List<FamilyInstance>();
-            
-            FilteredElementCollector colDoors = new FilteredElementCollector(doc);
-            colDoors.OfCategory(BuiltInCategory.OST_Doors);
-            colDoors.WhereElementIsNotElementType();
+            IList<Parameter> paramList = element.GetParameters(paramName);
 
-            foreach(FamilyInstance curDoor in colDoors)
+            if (paramList != null)
             {
-                foreach (Parameter curParam in curDoor.Parameters)
-                {
-                    if (curParam.Definition.Name == doorSwing && curParam.AsDouble == 1)
-                    {
-                        returnList.Add(curDoor);
-                    }
-                }
+                Parameter param = paramList[0];
+                string paramValue = param.AsString();
+                return paramValue;
             }
 
-            return returnList;
+            return "";
         }
     }
 }

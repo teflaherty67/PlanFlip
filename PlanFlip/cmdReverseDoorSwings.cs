@@ -32,38 +32,11 @@ namespace PlanFlip
             colDoors.WhereElementIsNotElementType();
 
             List<FamilyInstance> leftSwing = new List<FamilyInstance>();
-
             List<FamilyInstance> rightSwing = new List<FamilyInstance>();
 
-            // Parameter leftParam == null;
 
-            // Parameter rightParam = null;
 
-            // loop through all the parameters in colDoors & find Swing Left and Swing Right
-
-            foreach (FamilyInstance curDoor in colDoors)
-            {
-                foreach (Parameter curParam in curDoor.Parameters)
-                {
-                    if (curParam.Definition.Name == "Swing Left")
-                    {
-                        // do something
-                            // set LeftParam equal to curParam??
-                            // check the value of the parameter
-                            // if it's equal to 0, ignore it
-                            // if it's equal to 1, add curDoor to the leftSwing list
-                    }
-
-                    else if (curParam.Definition.Name == "Swing Right")
-                    {                               
-                        // do something else
-                            // set rightParam equal to curParam"
-                            // check the value of the parameter
-                            // if it's equal to 0, ignore it
-                            // if it's equal to 1, add curDoor to the rightSwing list
-                    }
-                }
-            }
+            
 
             // start the transaction
             using (Transaction t = new Transaction(doc))
