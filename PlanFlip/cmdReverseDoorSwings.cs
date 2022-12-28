@@ -61,19 +61,19 @@ namespace PlanFlip
                 foreach (FamilyInstance curDoor in leftSwing)
                 {
                     // set Swing Left value to no
-                        // lSwing.Set("No")
+                    lSwing.Set("No");
 
                     // set Swing Right value to yes
-                        // rSwing.Set("Yes")
+                    rSwing.Set("Yes");
                 }
 
                 foreach (FamilyInstance curDoor in rightSwing)
                 {
                     // set Swing Right value to no
-                    // rSwing.Set("No")
+                    rSwing.Set("No");
 
                     // set Swing Left value to yes
-                    // lSwing.Set("Yes")
+                    lSwing.Set("Yes");
                 }
 
                 t.Commit();

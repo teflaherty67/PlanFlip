@@ -46,7 +46,7 @@ namespace PlanFlip
             if (paramList != null)
             {
                 Parameter param = paramList[0];
-                string paramValue = param.ToString();
+                string paramValue = param.AsValueString();
                 return paramValue;
             }
 
