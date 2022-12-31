@@ -13,7 +13,7 @@ using System.Diagnostics;
 namespace PlanFlip
 {
     [Transaction(TransactionMode.Manual)]
-    public class cmdElevationSheetSwap : IExternalCommand
+    public class cmdSheetSwap : IExternalCommand
     {
         public Result Execute(
           ExternalCommandData commandData,
