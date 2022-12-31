@@ -36,9 +36,22 @@ namespace PlanFlip
             filter that list to find Exterior Elevation sheets that have a ViewId or View Name that
             contains Left or Right
 
+            from that list write the following data to Excel, to an Array??
 
-             
-             
+            Sheet Number & View Name
+
+                if sheetNumber for Left Elevation != sheetNumber for Right Elevation
+                    {
+                        change the integer part of the sheetNumber of Right Elevation to $ &
+                        change the integer part of the sheetNumber of Left Elevation to the
+                                current number of Right Elevation
+                        then change the integer part of the sheetNumber of Right Eelvation
+                                from $ to the prevoius number.
+                    }
+                Else if sheetNumber for Left Elevation == sheetNumber for Right Elevation
+                    {
+                        do nothing
+                    }            
              */
           
             
