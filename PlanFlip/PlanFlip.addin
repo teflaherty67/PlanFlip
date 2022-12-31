@@ -1,23 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<RevitAddIns>
-  <AddIn Type="Command">
-    <Text>Rename Elevations</Text>
-    <Description>Renames Left and Right Elevations</Description>
-    <Assembly>PlanFlip.dll</Assembly>
-    <FullClassName>PlanFlip.cmdElevationRename</FullClassName>
-    <ClientId>df691dc3-4581-4836-bed3-4335ed388048</ClientId>
-    <VendorId>T Edward</VendorId>
-    <VendorDescription>T Edward Coder</VendorDescription>
-  </AddIn>
-  <AddIn Type="Command">
-    <Text>Reverse Door Swings</Text>
-    <Description>Reverses the existing door swings</Description>
-    <Assembly>PlanFlip.dll</Assembly>
-    <FullClassName>PlanFlip.cmdReverseDoorSwings</FullClassName>
-    <ClientId>24B26437-2711-42FC-BEF1-BB5BBBE34BAB</ClientId>
-    <VendorId>T Edward</VendorId>
-    <VendorDescription>T Edward Coder</VendorDescription>
-  </AddIn>
+<RevitAddIns>  
   <AddIn Type="Command">
     <Text>Swap Elevation Sheets</Text>
     <Description>Swaps Left and Right Elevations on Sheets</Description>
