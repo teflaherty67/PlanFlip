@@ -43,7 +43,7 @@ namespace PlanFlip
         {
             IList<Parameter> paramList = element.GetParameters(paramName);
 
-            if (paramList != null)
+            if (paramList != null && paramList.Count > 0)
             {
                 Parameter param = paramList[0];
                 string paramValue = param.AsValueString();

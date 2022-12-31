@@ -18,6 +18,15 @@
     <VendorId>T Edward</VendorId>
     <VendorDescription>T Edward Coder</VendorDescription>
   </AddIn>
+  <AddIn Type="Command">
+    <Text>Swap Elevation Sheets</Text>
+    <Description>Swaps Left and Right Elevations on Sheets</Description>
+    <Assembly>PlanFlip.dll</Assembly>
+    <FullClassName>PlanFlip.cmdElevationSheetSwap</FullClassName>
+    <ClientId>df691dc3-4581-4836-bed3-4335ed388048</ClientId>
+    <VendorId>T Edward</VendorId>
+    <VendorDescription>T Edward Coder</VendorDescription>
+  </AddIn>
   <AddIn Type="Application">
     <Name>Application PlanFlip</Name>
     <Assembly>PlanFlip.dll</Assembly>
