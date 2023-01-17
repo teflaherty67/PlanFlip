@@ -55,11 +55,13 @@ namespace PlanFlip
 
             if(curForm.DialogResult==System.Windows.Forms.DialogResult.OK)
             {
-                // start transaction
-                
-                // swap logic
+                using (Transaction t = new Transaction(doc))
+                {
+                    t.Start("Renumber Elevation Sheets");
 
-                // 
+                } 
+                
+                
             }
                 
             return Result.Succeeded;

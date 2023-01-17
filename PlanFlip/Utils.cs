@@ -64,5 +64,10 @@ namespace PlanFlip
                 param.Set(value);
             }
         }
+
+        internal static void GetComboBox1Item(Form curForm)
+        {
+            return comboBox1.SelectedItem;
+        }
     }
 }
