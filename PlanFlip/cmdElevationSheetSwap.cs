@@ -32,34 +32,36 @@ namespace PlanFlip
             // filter viewports for sheet names that contains "Exterior Elevations"
             
             List<Viewport> eSheets= new List<Viewport>();
-            List<Viewport> lrSheets = new List<Viewport>();
+            List<ViewSheet> lrSheets = new List<ViewSheet>();
             List<string> sheetNum = new List<string>();
 
             foreach (Viewport vPort in vpCollector)
             {
-                string sName = Utils.GetParameterValueByName(vPort, "SheetId");
+                ViewSheet curSheet = doc.GetElement(vPort.SheetId) as ViewSheet;
+                View curView = doc.GetElement(vPort.ViewId) as View;
 
-                if (sName.Contains ("Exterior Elevations"))
-                    eSheets.Add(sName);
+                string sName = Utils.GetParameterValueByName(curSheet, "Sheet Name");
+                string vName = Utils.GetParameterValueByName(curView, "Name");
 
-                foreach(Viewport curVP in eSheets)
+                if (sName.Contains("Exterior Elevations"))
                 {
-                    string vName = Utils.GetParameterValueByName(vPort, "ViewId");
-
                     if (vName.Contains("Left") || vName.Contains("Right"))
-                        lrSheets.Add(vName.Name);
+                        lrSheets.Add(curSheet);
                 }
-
-                foreach (Viewport curSheet in lrSheets)
-                {
-                    string sNumber = Utils.GetParameterValueByName(vPort, "Sheet Number");
-                    
-                }
-
-
-
             }
 
+            ElevationSwapForm1 curForm = new ElevationSwapForm1(lrSheets);
+            curForm.ShowDialog();
+
+            if(curForm.DialogResult==System.Windows.Forms.DialogResult.OK)
+            {
+                // start transaction
+                
+                // swap logic
+
+                // 
+            }
+                
             return Result.Succeeded;
         }
     }
