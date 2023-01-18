@@ -167,7 +167,7 @@
             this.Controls.Add(this.comboBox2);
             this.Controls.Add(this.comboBox1);
             this.Name = "ElevationSwapForm1";
-            this.Text = "ElevationSwapForm1";
+            this.Text = "Elevation Sheet Swap";
             this.ResumeLayout(false);
             this.PerformLayout();
 
