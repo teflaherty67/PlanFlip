@@ -65,28 +65,29 @@ namespace PlanFlip
 
                 // extract the number portion of the sheet number
 
-                string numLeft1 = null;
-                string numRight1 = null;
-                string numLeft2 = null;
-                string numRight2 = null;
+                int sNumLeft1 = curLeftNum1.Length;
+                int sNumRight1 = curRightNum1.Length;
+                int sNumLeft2 = curLeftNum2.Length;
+                int sNumRight2 = curRightNum2.Length;
+                
 
                 // current sheet with Left Elevation
 
-                if(curLeftNum1.Length = 3)
+                if(sNumLeft1 == 3)
                 {
-                    numLeft1 = curLeftNum1[1, 1];
+                   char numLeft1 = curLeftNum1[1];
                 }
                 
-                if(curLeftNum1.length = 4)
+                if(sNumLeft1 == 4)
                 {
-                    numLeft1 = curLeftNum1[1, 2];
+                   string numLeft1 = curLeftNum1[1, 2];
                 }
 
                 // current sheet with Right Elevation
 
-                if (curRightNum1.length = 3)
+                if (sNumRight1 == 3)
                 {
-                    numRight1 = curRightNum1[1, 1];
+                    char numRight1 = curRightNum1[1];
                 }
 
                 if (curRightNum1.length = 4)

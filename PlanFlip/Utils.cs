@@ -65,6 +65,8 @@ namespace PlanFlip
             }
         }
 
+        internal static string GetStringBetweenCharacters(string input)
+
        
     }
 }
