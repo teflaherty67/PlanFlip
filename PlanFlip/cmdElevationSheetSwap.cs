@@ -63,53 +63,16 @@ namespace PlanFlip
                 string curLeftNum2 = curForm.GetComboBox3Item();
                 string curRightNum2 = curForm.GetComboBox4Item();
 
-                // extract the number portion of the sheet number
+                // extract the number portion of the sheet number              
 
-                int sNumLeft1 = curLeftNum1.Length;
-                int sNumRight1 = curRightNum1.Length;
-                int sNumLeft2 = curLeftNum2.Length;
-                int sNumRight2 = curRightNum2.Length;
+                string numLeft1 = Utils.GetStringBetweenCharacters(curLeftNum1, "A", "last character");
 
+                string numRight1 = Utils.GetStringBetweenCharacters(curRightNum1, "A", "last character");
 
-                // current sheet with Left Elevation
+                string numLeft2 = Utils.GetStringBetweenCharacters(curLeftNum2, "A", "last character");
 
-                string numLeft1 = Utils.GetStringBetweenCharacters(curLeftNum1, "A", "last character");               
+                string numRight2 = Utils.GetStringBetweenCharacters(curRightNum2, "A", "last character");
 
-                // current sheet with Right Elevation
-
-                if (sNumRight1 == 3)
-                {
-                    char numRight1 = curRightNum1[1];
-                }
-
-                if (curRightNum1.length = 4)
-                {
-                    numRight1 = curRightNum1[1, 2];
-                }
-
-                // split Left Elevation sheet 2
-
-                if (curLeftNum2.length = 3)
-                {
-                    numLeft2 = curLeftNum2[1, 1];
-                }
-
-                if (curLeftNum2.length = 4)
-                {
-                    numLeft2 = curLeftNum2[1, 2];
-                }
-
-                // split Right Elevation sheet 2
-
-                if (curRightNum2.length = 3)
-                {
-                    numRight2 = curRightNum2[1, 1];
-                }
-
-                if (curRightNum2.length = 4)
-                {
-                    numRight2 = curRightNum2[1, 2];
-                }
 
                 // start the transaction
 
