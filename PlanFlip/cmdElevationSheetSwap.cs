@@ -31,7 +31,7 @@ namespace PlanFlip
 
             // filter viewports for sheet names that contains "Exterior Elevations"
             
-            List<Viewport> eSheets= new List<Viewport>();
+            List<Viewport> eSheets = new List<Viewport>();
             List<ViewSheet> lrSheets = new List<ViewSheet>();
             List<string> sheetNum = new List<string>();
 
@@ -55,13 +55,78 @@ namespace PlanFlip
 
             if(curForm.DialogResult==System.Windows.Forms.DialogResult.OK)
             {
+
+                // create variable for current sheet numbers
+
+                string curLeftNum1 = curForm.GetComboBox1Item();
+                string curRightNum1 = curForm.GetComboBox2Item();
+                string curLeftNum2 = curForm.GetComboBox3Item();
+                string curRightNum2 = curForm.GetComboBox4Item();
+
+                // extract the number portion of the sheet number
+
+                string numLeft1 = null;
+                string numRight1 = null;
+                string numLeft2 = null;
+                string numRight2 = null;
+
+                // current sheet with Left Elevation
+
+                if(curLeftNum1.Length = 3)
+                {
+                    numLeft1 = curLeftNum1[1, 1];
+                }
+                
+                if(curLeftNum1.length = 4)
+                {
+                    numLeft1 = curLeftNum1[1, 2];
+                }
+
+                // current sheet with Right Elevation
+
+                if (curRightNum1.length = 3)
+                {
+                    numRight1 = curRightNum1[1, 1];
+                }
+
+                if (curRightNum1.length = 4)
+                {
+                    numRight1 = curRightNum1[1, 2];
+                }
+
+                // split Left Elevation sheet 2
+
+                if (curLeftNum2.length = 3)
+                {
+                    numLeft2 = curLeftNum2[1, 1];
+                }
+
+                if (curLeftNum2.length = 4)
+                {
+                    numLeft2 = curLeftNum2[1, 2];
+                }
+
+                // split Right Elevation sheet 2
+
+                if (curRightNum2.length = 3)
+                {
+                    numRight2 = curRightNum2[1, 1];
+                }
+
+                if (curRightNum2.length = 4)
+                {
+                    numRight2 = curRightNum2[1, 2];
+                }
+
+                // start the transaction
+
                 using (Transaction t = new Transaction(doc))
                 {
                     t.Start("Renumber Elevation Sheets");
 
-                    // create variable for current sheet numbers
+                    
 
-                    object curLeftNum1 = ElevationSwapForm1.GetComboBox1Item(ElevationSwapForm1);
+
 
 
                     t.Commit();

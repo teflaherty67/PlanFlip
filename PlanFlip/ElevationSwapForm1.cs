@@ -40,24 +40,24 @@ namespace PlanFlip
             else { comboBox3.Visible = false; comboBox4.Visible = false; }
         }
 
-        internal object GetComboBox1Item(System.Windows.Forms.Form curForm)
+        internal string GetComboBox1Item()
         {
-            return comboBox1.SelectedItem;
+            return comboBox1.SelectedItem.ToString();
         }
 
-        private object GetComboBox2Item(System.Windows.Forms.Form curForm)
+        internal string GetComboBox2Item()
         {
-            return comboBox2.SelectedItem;
+            return comboBox2.SelectedItem.ToString();
         }
 
-        private object GetComboBox3Item(System.Windows.Forms.Form curForm)
+        internal string GetComboBox3Item()
         {
-            return comboBox3.SelectedItem;
+            return comboBox3.SelectedItem.ToString();
         }
 
-        private object GetComboBox4Item(System.Windows.Forms.Form curForm)
+        internal string GetComboBox4Item()
         {
-            return comboBox4.SelectedItem;
+            return comboBox4.SelectedItem.ToString();
         }
     }
 }
