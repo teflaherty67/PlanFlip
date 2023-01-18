@@ -65,13 +65,17 @@ namespace PlanFlip
 
                 // extract the number portion of the sheet number              
 
-                string numLeft1 = Utils.GetStringBetweenCharacters(curLeftNum1, "A", "last character");
+                string numLeft1 = Utils.GetStringBetweenCharacters(curLeftNum1, curLeftNum1[0].ToString(),
+                    curLeftNum1[curLeftNum1.Length - 1].ToString());
 
-                string numRight1 = Utils.GetStringBetweenCharacters(curRightNum1, "A", "last character");
+                string numRight1 = Utils.GetStringBetweenCharacters(curRightNum1, curRightNum1[0].ToString(),
+                    curRightNum1[curRightNum1.Length - 1].ToString());
 
-                string numLeft2 = Utils.GetStringBetweenCharacters(curLeftNum2, "A", "last character");
+                string numLeft2 = Utils.GetStringBetweenCharacters(curLeftNum2, curLeftNum2[0].ToString(),
+                   curLeftNum2[curLeftNum2.Length - 1].ToString());
 
-                string numRight2 = Utils.GetStringBetweenCharacters(curRightNum2, "A", "last character");
+                string numRight2 = Utils.GetStringBetweenCharacters(curRightNum2, curRightNum2[0].ToString(),
+                    curRightNum2[curRightNum2.Length - 1].ToString());
 
 
                 // start the transaction
