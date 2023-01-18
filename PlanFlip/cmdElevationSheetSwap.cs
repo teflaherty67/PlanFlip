@@ -59,9 +59,13 @@ namespace PlanFlip
                 {
                     t.Start("Renumber Elevation Sheets");
 
+                    // create variable for current sheet numbers
+
+                    object curLeftNum1 = ElevationSwapForm1.GetComboBox1Item(ElevationSwapForm1);
+
+
+                    t.Commit();
                 } 
-                
-                
             }
                 
             return Result.Succeeded;

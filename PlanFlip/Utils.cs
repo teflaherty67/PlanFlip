@@ -65,9 +65,6 @@ namespace PlanFlip
             }
         }
 
-        internal static void GetComboBox1Item(Form curForm)
-        {
-            return comboBox1.SelectedItem;
-        }
+       
     }
 }

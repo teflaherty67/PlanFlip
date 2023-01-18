@@ -39,5 +39,25 @@ namespace PlanFlip
             if(cBox.Checked == true) { comboBox3.Visible = true; comboBox4.Visible = true; }
             else { comboBox3.Visible = false; comboBox4.Visible = false; }
         }
+
+        internal object GetComboBox1Item(System.Windows.Forms.Form curForm)
+        {
+            return comboBox1.SelectedItem;
+        }
+
+        private object GetComboBox2Item(System.Windows.Forms.Form curForm)
+        {
+            return comboBox2.SelectedItem;
+        }
+
+        private object GetComboBox3Item(System.Windows.Forms.Form curForm)
+        {
+            return comboBox3.SelectedItem;
+        }
+
+        private object GetComboBox4Item(System.Windows.Forms.Form curForm)
+        {
+            return comboBox4.SelectedItem;
+        }
     }
 }
