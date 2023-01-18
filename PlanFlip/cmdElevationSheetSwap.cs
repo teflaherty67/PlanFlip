@@ -69,19 +69,11 @@ namespace PlanFlip
                 int sNumRight1 = curRightNum1.Length;
                 int sNumLeft2 = curLeftNum2.Length;
                 int sNumRight2 = curRightNum2.Length;
-                
+
 
                 // current sheet with Left Elevation
 
-                if(sNumLeft1 == 3)
-                {
-                   char numLeft1 = curLeftNum1[1];
-                }
-                
-                if(sNumLeft1 == 4)
-                {
-                   string numLeft1 = curLeftNum1[1, 2];
-                }
+                string numLeft1 = Utils.GetStringBetweenCharacters(curLeftNum1, "A", "last character");               
 
                 // current sheet with Right Elevation
 
