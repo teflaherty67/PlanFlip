@@ -97,3 +97,8 @@ namespace PlanFlip
         }
     }
 }
+
+/* might be useful
+ * 
+ *   ICollection<ElementId> views = viewSheet.GetAllPlacedViews();
+  message += "\nNumber of views in the sheet : " + views.Count; */

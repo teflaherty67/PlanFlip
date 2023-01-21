@@ -57,6 +57,7 @@
   <ItemGroup>
     <Compile Include="App.cs" />
     <Compile Include="cmdElevationSheetSwap.cs" />
+    <Compile Include="cmdElevationSheetSwap1.cs" />
     <Compile Include="ElevationSwapForm1.cs">
       <SubType>Form</SubType>
     </Compile>
