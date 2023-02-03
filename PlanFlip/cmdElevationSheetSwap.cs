@@ -41,7 +41,7 @@ namespace PlanFlip
                 View curView = doc.GetElement(vPort.ViewId) as View;
 
                 string sName = Utils.GetParameterValueByName(curSheet, "Sheet Name");
-                string vName = Utils.GetParameterValueByName(curView, "Name");
+                string vName = curView.Name;
 
                 if (sName.Contains("Exterior Elevations"))
                 {
@@ -50,7 +50,7 @@ namespace PlanFlip
                 }
             }
 
-            ElevationSwapForm1 curForm = new ElevationSwapForm1(lrSheets);
+            ElevationSwapForm curForm = new ElevationSwapForm(lrSheets);
             curForm.ShowDialog();
 
             if(curForm.DialogResult==System.Windows.Forms.DialogResult.OK)
@@ -60,10 +60,6 @@ namespace PlanFlip
 
                 string curLeftNum1 = curForm.GetComboBox1Item();
                 string curRightNum1 = curForm.GetComboBox2Item();
-                string curLeftNum2 = curForm.GetComboBox3Item();
-                string curRightNum2 = curForm.GetComboBox4Item();
-
-                // extract the number portion of the sheet number              
 
                 string numLeft1 = Utils.GetStringBetweenCharacters(curLeftNum1, curLeftNum1[0].ToString(),
                     curLeftNum1[curLeftNum1.Length - 1].ToString());
@@ -71,18 +67,23 @@ namespace PlanFlip
                 string numRight1 = Utils.GetStringBetweenCharacters(curRightNum1, curRightNum1[0].ToString(),
                     curRightNum1[curRightNum1.Length - 1].ToString());
 
-                string numLeft2 = Utils.GetStringBetweenCharacters(curLeftNum2, curLeftNum2[0].ToString(),
+                if (curForm.GetCheckBox1() == true)
+                {
+                    string curLeftNum2 = curForm.GetComboBox3Item();
+                    string curRightNum2 = curForm.GetComboBox4Item();
+
+                    string numLeft2 = Utils.GetStringBetweenCharacters(curLeftNum2, curLeftNum2[0].ToString(),
                    curLeftNum2[curLeftNum2.Length - 1].ToString());
 
-                string numRight2 = Utils.GetStringBetweenCharacters(curRightNum2, curRightNum2[0].ToString(),
-                    curRightNum2[curRightNum2.Length - 1].ToString());
-
+                    string numRight2 = Utils.GetStringBetweenCharacters(curRightNum2, curRightNum2[0].ToString(),
+                        curRightNum2[curRightNum2.Length - 1].ToString());
+                } 
 
                 // start the transaction
 
                 using (Transaction t = new Transaction(doc))
                 {
-                    t.Start("Renumber Elevation Sheets");
+                    t.Start("Reorder Elevation Sheets");
 
                     
 

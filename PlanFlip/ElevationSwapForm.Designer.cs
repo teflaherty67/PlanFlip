@@ -1,6 +1,6 @@
 ﻿namespace PlanFlip
 {
-    partial class ElevationSwapForm1
+    partial class ElevationSwapForm
     {
         /// <summary>
         /// Required designer variable.
@@ -45,33 +45,37 @@
             // comboBox1
             // 
             this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(500, 100);
+            this.comboBox1.Location = new System.Drawing.Point(188, 42);
+            this.comboBox1.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
             this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(225, 39);
+            this.comboBox1.Size = new System.Drawing.Size(87, 21);
             this.comboBox1.TabIndex = 0;
             // 
             // comboBox2
             // 
             this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Location = new System.Drawing.Point(500, 165);
+            this.comboBox2.Location = new System.Drawing.Point(188, 69);
+            this.comboBox2.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
             this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(225, 39);
+            this.comboBox2.Size = new System.Drawing.Size(87, 21);
             this.comboBox2.TabIndex = 1;
             // 
             // comboBox3
             // 
             this.comboBox3.FormattingEnabled = true;
-            this.comboBox3.Location = new System.Drawing.Point(500, 235);
+            this.comboBox3.Location = new System.Drawing.Point(188, 99);
+            this.comboBox3.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
             this.comboBox3.Name = "comboBox3";
-            this.comboBox3.Size = new System.Drawing.Size(225, 39);
+            this.comboBox3.Size = new System.Drawing.Size(87, 21);
             this.comboBox3.TabIndex = 3;
             // 
             // checkBox1
             // 
             this.checkBox1.AutoSize = true;
-            this.checkBox1.Location = new System.Drawing.Point(303, 40);
+            this.checkBox1.Location = new System.Drawing.Point(114, 17);
+            this.checkBox1.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
             this.checkBox1.Name = "checkBox1";
-            this.checkBox1.Size = new System.Drawing.Size(34, 33);
+            this.checkBox1.Size = new System.Drawing.Size(15, 14);
             this.checkBox1.TabIndex = 6;
             this.checkBox1.UseVisualStyleBackColor = true;
             this.checkBox1.CheckedChanged += new System.EventHandler(this.checkBox1_CheckedChanged);
@@ -79,53 +83,59 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(40, 300);
+            this.label2.Location = new System.Drawing.Point(15, 126);
+            this.label2.Margin = new System.Windows.Forms.Padding(1, 0, 1, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(393, 32);
+            this.label2.Size = new System.Drawing.Size(150, 13);
             this.label2.TabIndex = 8;
             this.label2.Text = "Second Right Elevation Sheet";
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(40, 240);
+            this.label3.Location = new System.Drawing.Point(15, 101);
+            this.label3.Margin = new System.Windows.Forms.Padding(1, 0, 1, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(374, 32);
+            this.label3.Size = new System.Drawing.Size(143, 13);
             this.label3.TabIndex = 9;
             this.label3.Text = "Second Left Elevation Sheet";
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(40, 170);
+            this.label4.Location = new System.Drawing.Point(15, 71);
+            this.label4.Margin = new System.Windows.Forms.Padding(1, 0, 1, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(390, 32);
+            this.label4.Size = new System.Drawing.Size(147, 13);
             this.label4.TabIndex = 10;
             this.label4.Text = "Current Right Elevation Sheet";
             // 
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(40, 110);
+            this.label5.Location = new System.Drawing.Point(15, 46);
+            this.label5.Margin = new System.Windows.Forms.Padding(1, 0, 1, 0);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(371, 32);
+            this.label5.Size = new System.Drawing.Size(140, 13);
             this.label5.TabIndex = 11;
             this.label5.Text = "Current Left Elevation Sheet";
             // 
             // comboBox4
             // 
             this.comboBox4.FormattingEnabled = true;
-            this.comboBox4.Location = new System.Drawing.Point(500, 300);
+            this.comboBox4.Location = new System.Drawing.Point(188, 126);
+            this.comboBox4.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
             this.comboBox4.Name = "comboBox4";
-            this.comboBox4.Size = new System.Drawing.Size(225, 39);
+            this.comboBox4.Size = new System.Drawing.Size(87, 21);
             this.comboBox4.TabIndex = 12;
             // 
             // button1
             // 
             this.button1.DialogResult = System.Windows.Forms.DialogResult.OK;
-            this.button1.Location = new System.Drawing.Point(500, 400);
+            this.button1.Location = new System.Drawing.Point(188, 168);
+            this.button1.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 40);
+            this.button1.Size = new System.Drawing.Size(28, 17);
             this.button1.TabIndex = 13;
             this.button1.Text = "OK";
             this.button1.UseVisualStyleBackColor = true;
@@ -133,9 +143,10 @@
             // button2
             // 
             this.button2.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            this.button2.Location = new System.Drawing.Point(600, 400);
+            this.button2.Location = new System.Drawing.Point(225, 168);
+            this.button2.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(150, 40);
+            this.button2.Size = new System.Drawing.Size(56, 17);
             this.button2.TabIndex = 14;
             this.button2.Text = "Cancel";
             this.button2.UseVisualStyleBackColor = true;
@@ -143,17 +154,18 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(40, 40);
+            this.label1.Location = new System.Drawing.Point(15, 17);
+            this.label1.Margin = new System.Windows.Forms.Padding(1, 0, 1, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(257, 32);
+            this.label1.Size = new System.Drawing.Size(96, 13);
             this.label1.TabIndex = 7;
             this.label1.Text = "Are Elevations split";
             // 
             // ElevationSwapForm1
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(16F, 31F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(818, 472);
+            this.ClientSize = new System.Drawing.Size(355, 240);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.comboBox4);
@@ -166,6 +178,7 @@
             this.Controls.Add(this.comboBox3);
             this.Controls.Add(this.comboBox2);
             this.Controls.Add(this.comboBox1);
+            this.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
             this.Name = "ElevationSwapForm1";
             this.Text = "Elevation Sheet Swap";
             this.ResumeLayout(false);

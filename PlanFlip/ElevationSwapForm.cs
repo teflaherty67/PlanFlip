@@ -11,9 +11,9 @@ using System.Windows.Forms;
 
 namespace PlanFlip
 {
-    public partial class ElevationSwapForm1 : System.Windows.Forms.Form
+    public partial class ElevationSwapForm : System.Windows.Forms.Form
     {
-        public ElevationSwapForm1(List<ViewSheet> elevSheets)
+        public ElevationSwapForm(List<ViewSheet> elevSheets)
         {
             InitializeComponent();
 
@@ -58,6 +58,11 @@ namespace PlanFlip
         internal string GetComboBox4Item()
         {
             return comboBox4.SelectedItem.ToString();
+        }
+
+        internal bool GetCheckBox1()
+        {
+            return checkBox1.Checked;
         }
     }
 }

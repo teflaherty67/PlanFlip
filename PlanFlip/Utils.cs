@@ -78,38 +78,6 @@ namespace PlanFlip
             }
 
             return string.Empty;
-        }
-
-        public static List<ViewSheet> GetAllSheets(Document curDoc)
-        {
-            //get all sheets
-            FilteredElementCollector colSheets = new FilteredElementCollector(curDoc);
-            colSheets.OfCategory(BuiltInCategory.OST_Sheets);
-
-            List<ViewSheet> l_Sheets = new List<ViewSheet>();
-            foreach (ViewSheet x in colSheets.ToElements())
-            {
-                l_Sheets.Add(x);
-            }
-
-            return l_Sheets;
-        }
-
-        internal static ViewSheet GetSheetByName(Document curDoc, string sheetName)
-        {
-            //get all sheets
-            List<ViewSheet> curSheets = GetAllSheets(curDoc);
-
-            //loop through sheets and check sheet name
-            foreach (ViewSheet curSheet in curSheets)
-            {
-                if (curSheet.Name == sheetName)
-                {
-                    return curSheet;
-                }
-            }
-
-            return null;
-        }
+        }       
     }
 }
