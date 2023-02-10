@@ -96,7 +96,7 @@ namespace PlanFlip
                 }
             }
 
-            return null;
+            return returnSheets;
         }
 
         public static List<ViewSheet> GetAllSheets(Document curDoc)
