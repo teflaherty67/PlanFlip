@@ -78,39 +78,40 @@ namespace PlanFlip
             }
 
             return string.Empty;
-        }       
-    }
-    public static List<ViewSheet> GetSheetsByNumber(Document curDoc, string sheetNumber)
-    {
-        List<ViewSheet> returnSheets = new List<ViewSheet>();
+        }
 
-        //get all sheets
-        List<ViewSheet> curSheets = GetAllSheets(curDoc);
-
-        //loop through sheets and check sheet name
-        foreach (ViewSheet curSheet in curSheets)
+        public static List<ViewSheet> GetSheetsByNumber(Document curDoc, string sheetNumber)
         {
-            if (curSheet.SheetNumber.Contains(sheetNumber))
+            List<ViewSheet> returnSheets = new List<ViewSheet>();
+
+            //get all sheets
+            List<ViewSheet> curSheets = GetAllSheets(curDoc);
+
+            //loop through sheets and check sheet name
+            foreach (ViewSheet curSheet in curSheets)
             {
-                returnSheets.Add(curSheet);
+                if (curSheet.SheetNumber.Contains(sheetNumber))
+                {
+                    returnSheets.Add(curSheet);
+                }
             }
+
+            return null;
         }
 
-        return null;
-    }
-
-    public static List<ViewSheet> GetAllSheets(Document curDoc)
-    {
-        //get all sheets
-        FilteredElementCollector m_colViews = new FilteredElementCollector(curDoc);
-        m_colViews.OfCategory(BuiltInCategory.OST_Sheets);
-
-        List<ViewSheet> m_sheets = new List<ViewSheet>();
-        foreach (ViewSheet x in m_colViews.ToElements())
+        public static List<ViewSheet> GetAllSheets(Document curDoc)
         {
-            m_sheets.Add(x);
-        }
+            //get all sheets
+            FilteredElementCollector m_colViews = new FilteredElementCollector(curDoc);
+            m_colViews.OfCategory(BuiltInCategory.OST_Sheets);
 
-        return m_sheets;
-    }
+            List<ViewSheet> m_sheets = new List<ViewSheet>();
+            foreach (ViewSheet x in m_colViews.ToElements())
+            {
+                m_sheets.Add(x);
+            }
+
+            return m_sheets;
+        }
+    }    
 }

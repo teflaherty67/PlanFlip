@@ -85,9 +85,23 @@ namespace PlanFlip
                 {
                     t.Start("Reorder Elevation Sheets");
 
-                    
+                    List<ViewSheet> matchingLeftSheets = Utils.GetSheetsByNumber(doc, numLeft1);
+                    List<ViewSheet> matchingRightSheets = Utils.GetSheetsByNumber(doc, numRight1);
 
+                    foreach (ViewSheet sheet in matchingLeftSheets)
+                    {
+                        sheet.SheetNumber = sheet.SheetNumber.Replace(numLeft1, numRight1 + "zz");
+                    }
 
+                    foreach (ViewSheet sheet in matchingRightSheets)
+                    {
+                        sheet.SheetNumber = sheet.SheetNumber.Replace(numRight1, numLeft1);
+                    }
+
+                    foreach (ViewSheet sheet in matchingLeftSheets)
+                    {
+                        sheet.SheetNumber = sheet.SheetNumber.Replace(numRight1 + "zz", numRight1);
+                    }
 
                     t.Commit();
                 } 
@@ -97,8 +111,3 @@ namespace PlanFlip
         }
     }
 }
-
-/* might be useful
- * 
- *   ICollection<ElementId> views = viewSheet.GetAllPlacedViews();
-  message += "\nNumber of views in the sheet : " + views.Count; */

@@ -17,7 +17,9 @@ namespace PlanFlip
         {
             InitializeComponent();
 
-            comboBox3.Visible = false; 
+            label2.Visible = false;
+            label3.Visible = false;
+            comboBox3.Visible = false;
             comboBox4.Visible = false;
 
             checkBox1.Checked = false;
@@ -39,8 +41,8 @@ namespace PlanFlip
 
             CheckBox cBox = (CheckBox)sender;
 
-            if(cBox.Checked == true) { comboBox3.Visible = true; comboBox4.Visible = true; }
-            else { comboBox3.Visible = false; comboBox4.Visible = false; }
+            if (cBox.Checked == true) { comboBox3.Visible = true; comboBox4.Visible = true; label2.Visible = true; label3.Visible = true; }
+            else { comboBox3.Visible = false; comboBox4.Visible = false; label2.Visible = false; label3.Visible = false; }
         }
 
         internal string GetComboBox1Item()
