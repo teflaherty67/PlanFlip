@@ -17,6 +17,9 @@ namespace PlanFlip
         {
             InitializeComponent();
 
+            comboBox3.Visible = false; 
+            comboBox4.Visible = false;
+
             checkBox1.Checked = false;
 
             foreach(ViewSheet sheet in elevSheets)

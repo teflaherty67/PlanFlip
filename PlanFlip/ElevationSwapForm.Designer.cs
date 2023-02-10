@@ -46,7 +46,7 @@
             // 
             this.comboBox1.FormattingEnabled = true;
             this.comboBox1.Location = new System.Drawing.Point(188, 42);
-            this.comboBox1.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
+            this.comboBox1.Margin = new System.Windows.Forms.Padding(1);
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(87, 21);
             this.comboBox1.TabIndex = 0;
@@ -55,7 +55,7 @@
             // 
             this.comboBox2.FormattingEnabled = true;
             this.comboBox2.Location = new System.Drawing.Point(188, 69);
-            this.comboBox2.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
+            this.comboBox2.Margin = new System.Windows.Forms.Padding(1);
             this.comboBox2.Name = "comboBox2";
             this.comboBox2.Size = new System.Drawing.Size(87, 21);
             this.comboBox2.TabIndex = 1;
@@ -64,16 +64,17 @@
             // 
             this.comboBox3.FormattingEnabled = true;
             this.comboBox3.Location = new System.Drawing.Point(188, 99);
-            this.comboBox3.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
+            this.comboBox3.Margin = new System.Windows.Forms.Padding(1);
             this.comboBox3.Name = "comboBox3";
             this.comboBox3.Size = new System.Drawing.Size(87, 21);
             this.comboBox3.TabIndex = 3;
+            this.comboBox3.Visible = false;
             // 
             // checkBox1
             // 
             this.checkBox1.AutoSize = true;
             this.checkBox1.Location = new System.Drawing.Point(114, 17);
-            this.checkBox1.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
+            this.checkBox1.Margin = new System.Windows.Forms.Padding(1);
             this.checkBox1.Name = "checkBox1";
             this.checkBox1.Size = new System.Drawing.Size(15, 14);
             this.checkBox1.TabIndex = 6;
@@ -124,16 +125,17 @@
             // 
             this.comboBox4.FormattingEnabled = true;
             this.comboBox4.Location = new System.Drawing.Point(188, 126);
-            this.comboBox4.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
+            this.comboBox4.Margin = new System.Windows.Forms.Padding(1);
             this.comboBox4.Name = "comboBox4";
             this.comboBox4.Size = new System.Drawing.Size(87, 21);
             this.comboBox4.TabIndex = 12;
+            this.comboBox4.Visible = false;
             // 
             // button1
             // 
             this.button1.DialogResult = System.Windows.Forms.DialogResult.OK;
             this.button1.Location = new System.Drawing.Point(188, 168);
-            this.button1.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
+            this.button1.Margin = new System.Windows.Forms.Padding(1);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(28, 17);
             this.button1.TabIndex = 13;
@@ -144,7 +146,7 @@
             // 
             this.button2.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.button2.Location = new System.Drawing.Point(225, 168);
-            this.button2.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
+            this.button2.Margin = new System.Windows.Forms.Padding(1);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(56, 17);
             this.button2.TabIndex = 14;
@@ -161,7 +163,7 @@
             this.label1.TabIndex = 7;
             this.label1.Text = "Are Elevations split";
             // 
-            // ElevationSwapForm1
+            // ElevationSwapForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -178,8 +180,8 @@
             this.Controls.Add(this.comboBox3);
             this.Controls.Add(this.comboBox2);
             this.Controls.Add(this.comboBox1);
-            this.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
-            this.Name = "ElevationSwapForm1";
+            this.Margin = new System.Windows.Forms.Padding(1);
+            this.Name = "ElevationSwapForm";
             this.Text = "Elevation Sheet Swap";
             this.ResumeLayout(false);
             this.PerformLayout();
