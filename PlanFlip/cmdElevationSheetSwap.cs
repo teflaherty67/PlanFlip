@@ -77,7 +77,13 @@ namespace PlanFlip
 
                     string numRight2 = Utils.GetStringBetweenCharacters(curRightNum2, curRightNum2[0].ToString(),
                         curRightNum2[curRightNum2.Length - 1].ToString());
-                } 
+                }
+
+                // hide project browser
+
+                DockablePaneId dpId = DockablePanes.BuiltInDockablePanes.ProjectBrowser;
+                DockablePane pB = new DockablePane(dpId);
+                pB.Hide();
 
                 // start the transaction
 
@@ -104,6 +110,8 @@ namespace PlanFlip
                     }
 
                     t.Commit();
+
+                    pB.Show();
                 } 
             }
                 
